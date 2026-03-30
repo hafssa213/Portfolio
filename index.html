@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Mon Portfolio</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f5f0e6; 
+}
+
+/* HEADER */
+header {
+    background: #c8a27a;
+    color: white;
+    padding: 40px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 40px;
+}
+
+header p {
+    margin-top: 10px;
+    opacity: 0.9;
+}
+
+/* SECTIONS */
+section {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* TITRES */
+h2 {
+    color: #5a3e2b;
+    border-left: 5px solid #e8aeb7; /* rose */
+    padding-left: 10px;
+}
+
+/* CARTES */
+.card {
+    background: white;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* INPUT */
+input {
+    padding: 10px;
+    width: 65%;
+    margin-right: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+/* BOUTONS */
+button {
+    background: #e8aeb7; /* rose clair */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #d48c97;
+}
+
+/* LISTE */
+ul {
+    margin-top: 15px;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #c8a27a; 
+    color: white;
+    margin-top: 30px;
+}
+    .buttons {
+    margin-top: 20px;
+}
+
+.buttons a {
+    display: inline-block;
+    margin: 5px;
+    padding: 10px 15px;
+    background: #e8aeb7;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.buttons a:hover {
+    background: #d48c97;
+}
+</style>
+    
+
+</head>
+
+<body>
+
+<header>
+    <h1>Hafssa</h1>
+    <p>Apprentie dévloppeuse web</p>
+    <div class="buttons">
+        <a href="#" target="_blank">GitHub</a>
+        <a href="#" target="_blank">CV</a>
+        <a href="mailto:tonemail@gmail.com">Contact</a>
+    </div>
+</header>
+
+<section>
+    <h2>À propos de moi</h2>
+    <div class="card">
+        <p>Je suis étudiante en informatique, je développe des projets en HTML, CSS, JavaScript et C.</p>
+    </div>
+</section>
+
+<section>
+    <h2>Mes projets</h2>
+
+    <div class="card">
+        <h3>To-Do List (JavaScript)</h3>
+        <input id="task" placeholder="Écris une taches">
+        <button onclick="addTask()">Ajouter</button>
+        <ul id="list"></ul>
+    </div>
+
+    <div class="card">
+        <h3>Mini site HTML/CSS</h3>
+        <p>Création d’un site web simple avec HTML et CSS.</p>
+    </div>
+
+    <div class="card">
+        <h3>Programme en C</h3>
+        <p>Programme de base en langage C </p>
+    </div>
+
+</section>
+
+<section>
+    <h2>Contact</h2>
+    <div class="card">
+        <p>Email : hafssaotb06@gmail.com</p>
+    </div>
+</section>
+
+<footer>
+    <p>Mon portfolio 💻</p>
+</footer>
+
+<script>
+function addTask() {
+    let taskInput = document.getElementById("task");
+    let taskValue = taskInput.value;
+
+    if (taskValue === "") {
+        alert("Écris une tâche !");
+        return;
+    }
+
+    let li = document.createElement("li");
+    li.textContent = taskValue;
+
+    document.getElementById("list").appendChild(li);
+
+    taskInput.value = "";
+}
+</script>
+
+</body>
+</html>
